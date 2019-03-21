@@ -2,14 +2,18 @@
 <projectDescription>
 <<<<<<< HEAD
 	<name>GestUsers</name>
+<<<<<<< HEAD
+=======
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
 	</buildSpec>
 	<natures>
+>>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
 =======
 	<name>Gestion Utilisateur</name>
+>>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
 	<comment></comment>
 	<projects>
 	</projects>
