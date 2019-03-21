@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>GestUsers</name>
+=======
+	<name>Gestion Utilisateur</name>
+>>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
 	<comment></comment>
 	<projects>
 	</projects>
