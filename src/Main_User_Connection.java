@@ -19,6 +19,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Main_User_Connection extends JFrame {
 
@@ -48,7 +50,7 @@ public class Main_User_Connection extends JFrame {
 	public Main_User_Connection() {
 		setResizable(false);
 		setAlwaysOnTop(true);
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 292);
 		contentPane = new JPanel();
 		contentPane.setVisible(false);
@@ -61,6 +63,7 @@ public class Main_User_Connection extends JFrame {
 		btnValider.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				System.out.println("Action Bouton !");
 			}
 		});
 		btnValider.addMouseListener(new MouseAdapter() {
@@ -73,6 +76,19 @@ public class Main_User_Connection extends JFrame {
 		contentPane.add(btnValider);
 		
 		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(java.awt.event.KeyEvent arg0) {
+				if(arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+					// Faire Ca des entrer
+				}
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		textField.setBounds(208, 66, 202, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
