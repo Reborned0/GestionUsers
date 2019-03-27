@@ -23,7 +23,8 @@ public class Connection_App extends JFrame {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6280739219974180942L;
+
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
@@ -51,7 +52,7 @@ public class Connection_App extends JFrame {
 		setTitle("Connexion a votre espace");
 		setResizable(false);
 		setAlwaysOnTop(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 790, 292);
 		contentPane = new JPanel();
 		contentPane.setOpaque(false);
