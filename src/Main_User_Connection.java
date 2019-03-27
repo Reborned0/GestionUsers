@@ -70,6 +70,10 @@ public class Main_User_Connection extends JFrame {
 				textField.setColumns(10);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 
 		btnValider.setBounds(556, 87, 79, 33);
 		contentPane.add(btnValider);
