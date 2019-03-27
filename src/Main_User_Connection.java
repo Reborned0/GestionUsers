@@ -1,17 +1,13 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import java.awt.Component;
-import javax.swing.Box;
-import java.awt.Dimension;
 import javax.swing.JButton;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import net.miginfocom.swing.MigLayout;
+
+
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPasswordField;
@@ -24,6 +20,10 @@ import java.awt.event.ActionEvent;
 
 public class Main_User_Connection extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
@@ -60,10 +60,18 @@ public class Main_User_Connection extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(true) {
+					Main_UsersClass.main(null);;
+				}
+			}
+		});
 		btnValider.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				System.out.println("Action Bouton !");
+
 			}
 		});
 		btnValider.addMouseListener(new MouseAdapter() {
