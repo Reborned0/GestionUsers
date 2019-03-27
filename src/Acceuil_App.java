@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class Main_UsersClass {
+public class Acceuil_App {
 
 	private JFrame frmAcceuil;
 
@@ -13,7 +13,7 @@ public class Main_UsersClass {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main_UsersClass window = new Main_UsersClass();
+					Acceuil_App window = new Acceuil_App();
 					window.frmAcceuil.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -25,7 +25,7 @@ public class Main_UsersClass {
 	/**
 	 * Create the application.
 	 */
-	public Main_UsersClass() {
+	public Acceuil_App() {
 		initialize();
 	}
 

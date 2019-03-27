@@ -28,7 +28,7 @@ public class Fenetre  extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main_User_Connection frame = new Main_User_Connection();
+					Connection_App frame = new Connection_App();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

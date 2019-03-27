@@ -18,7 +18,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Main_User_Connection extends JFrame {
+public class Connection_App extends JFrame {
 
 	/**
 	 * 
@@ -35,7 +35,7 @@ public class Main_User_Connection extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main_User_Connection frame = new Main_User_Connection();
+					Connection_App frame = new Connection_App();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class Main_User_Connection extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Main_User_Connection() {
+	public Connection_App() {
 		setTitle("Connexion a votre espace");
 		setResizable(false);
 		setAlwaysOnTop(true);
