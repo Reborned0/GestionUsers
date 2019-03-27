@@ -25,7 +25,7 @@ public class UserBDD {
  */
 	public User searchUser(String nom, String pwd) {
 
-		User unUtilisateur = null;
+		User unUtilisateur = new User();
 		try {
 			PreparedStatement statement = connect.prepareStatement("select id, nom, prenom from visiteur where nom = ? and mdp = ?");
 			statement.setString(1, nom);

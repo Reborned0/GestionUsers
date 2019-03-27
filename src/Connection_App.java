@@ -17,10 +17,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -34,7 +30,9 @@ public class Connection_App extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
-	private controle controleur;
+	private controle controleur = new controle();
+	@SuppressWarnings("unused")
+	private User utilisateur;
 
 	/**
 	 * Launch the application.
@@ -119,8 +117,8 @@ public class Connection_App extends JFrame {
 			
 		}
 		else {
-			JOptionPane.showMessageDialog(this, controleur.searchUser(nom, pwd));
-			User utilisateur = controleur.searchUser(nom, pwd);
+				User utilisateur = controleur.searchUser(nom, pwd);
+				JOptionPane.showMessageDialog(this, utilisateur);
 			
 			if (utilisateur.getNom() == nom){
 				JOptionPane.showMessageDialog(this, "test");

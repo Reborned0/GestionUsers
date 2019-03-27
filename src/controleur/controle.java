@@ -17,7 +17,6 @@ public class controle {
 	}
 	
 	public User searchUser(String nom, String pwd){
-		System.out.println("test");
 		return bdd.searchUser(nom, pwd);
 	}
 }
