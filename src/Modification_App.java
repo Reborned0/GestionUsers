@@ -5,6 +5,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import sun.swing.AccumulativeRunnable;
+
+import java.awt.Cursor;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 public class Modification_App extends JFrame {
 
 	/**
@@ -16,7 +24,7 @@ public class Modification_App extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,12 +41,21 @@ public class Modification_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Modification_App() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				
+				
+			}
+		});
+		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		setVisible(true);
+		setTitle("Modification de l'utilisateur");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1000, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 	}
-
 }

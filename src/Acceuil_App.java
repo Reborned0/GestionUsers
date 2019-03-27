@@ -14,6 +14,9 @@ import java.awt.Font;
 import javax.swing.Box;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Acceuil_App {
 
@@ -47,6 +50,7 @@ public class Acceuil_App {
 	 */
 	private void initialize() {
 		frmAcceuil = new JFrame();
+		frmAcceuil.getContentPane().setForeground(new Color(173, 255, 47));
 		frmAcceuil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmAcceuil.setVisible(true);
 		frmAcceuil.setTitle("Acceuil");
@@ -80,11 +84,13 @@ public class Acceuil_App {
 		
 		JLabel lblNompersonne = new JLabel("PRENOM + NOM");
 		lblNompersonne.setFont(new Font("Tahoma", Font.ITALIC, 17));
-		lblNompersonne.setBounds(106, 11, 172, 36);
+		lblNompersonne.setBounds(94, 8, 172, 36);
 		frmAcceuil.getContentPane().add(lblNompersonne);
 	}
 	private void Modifier() {
 		Modification_App Modifier= new Modification_App();
-		Modifier.main(null);
+		if(!Modifier.isEnabled()) {
+			Modifier.main(null);
+		}
 	}
 }
