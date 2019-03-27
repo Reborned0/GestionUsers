@@ -48,58 +48,31 @@ public class Main_User_Connection extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_User_Connection() {
+		setTitle("Connexion a votre espace");
 		setResizable(false);
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 292);
 		contentPane = new JPanel();
-		contentPane.setVisible(false);
 		contentPane.setOpaque(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnValider = new JButton("Valider");
-		btnValider.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(true) {
-					Main_UsersClass.main(null);;
-				}
-			}
-		});
-		btnValider.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				System.out.println("Action Bouton !");
-
-			}
-		});
-		btnValider.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				
-			}
-		});
-		btnValider.setBounds(556, 87, 79, 33);
-		contentPane.add(btnValider);
+		JPanel panel = new JPanel();
+		panel.setBounds(208, 66, 202, 20);
+		contentPane.add(panel);
+		panel.setLayout(null);
 		
 		textField = new JTextField();
-		textField.addActionListener(new ActionListener() {
-			public void actionPerformed(java.awt.event.KeyEvent arg0) {
-				if(arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-					// Faire Ca des entrer
-				}
-			}
+		textField.setBounds(0, 0, 202, 20);
+		panel.add(textField);
+				textField.setColumns(10);
+		
+		JButton btnValider = new JButton("Valider");
 
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		textField.setBounds(208, 66, 202, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		btnValider.setBounds(556, 87, 79, 33);
+		contentPane.add(btnValider);
 		
 		JLabel lblIdentifiant = new JLabel("Identifiant");
 		lblIdentifiant.setFont(new Font("Tahoma", Font.PLAIN, 14));

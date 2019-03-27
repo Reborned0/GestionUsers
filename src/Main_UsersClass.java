@@ -13,10 +13,8 @@ public class Main_UsersClass {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main_User_Connection Connection = new Main_User_Connection();
 					Main_UsersClass window = new Main_UsersClass();
 					window.frmAcceuil.setVisible(true);
-					Connection.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
