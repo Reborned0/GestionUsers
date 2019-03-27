@@ -1,9 +1,2 @@
-/bin/
-<<<<<<< HEAD
 /.classpath
-/.project
-=======
-.classpath
-.project
-.settings
->>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
+

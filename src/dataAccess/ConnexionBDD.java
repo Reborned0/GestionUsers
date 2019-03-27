@@ -34,7 +34,14 @@ public class ConnexionBDD {
 	public static Connection getInstance(){
 		if(connect == null){
 			try {
-				connect = DriverManager.getConnection(url, user, passwd);
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					connect = DriverManager.getConnection(url, user, passwd);
+				} catch (ClassNotFoundException e) {
+					// TODO Bloc catch généré automatiquement
+					e.printStackTrace();
+				} 
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
