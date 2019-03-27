@@ -35,7 +35,7 @@ public class Main_UsersClass {
 	private void initialize() {
 		frmAcceuil = new JFrame();
 		frmAcceuil.setVisible(true);
-		frmAcceuil.setTitle("Acceuil");
+		frmAcceuil.setTitle("Accueuil");
 		frmAcceuil.setBounds(100, 100, 1400, 1000);
 		frmAcceuil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

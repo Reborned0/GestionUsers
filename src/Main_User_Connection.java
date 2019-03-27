@@ -3,16 +3,23 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controleur.controle;
+import metier.User;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
 
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +34,7 @@ public class Main_User_Connection extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private controle controleur;
 
 	/**
 	 * Launch the application.
@@ -72,6 +80,7 @@ public class Main_User_Connection extends JFrame {
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				valider();
 			}
 		});
 
@@ -93,5 +102,32 @@ public class Main_User_Connection extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(208, 135, 202, 20);
 		contentPane.add(passwordField);
+	}
+	
+	protected void valider(){
+		String nom = textField.getText();
+		@SuppressWarnings("deprecation")
+		String pwd = passwordField.getText();
+		
+		if(nom.isEmpty())
+		{ //affiche message erreur
+			
+			JOptionPane.showMessageDialog(this, "Saisissez un nom", "Erreur", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if (pwd.isEmpty()){
+			JOptionPane.showMessageDialog(this, "Saisissez un mot de passe !", "Erreur", JOptionPane.INFORMATION_MESSAGE);
+			
+		}
+		else {
+			JOptionPane.showMessageDialog(this, controleur.searchUser(nom, pwd));
+			User utilisateur = controleur.searchUser(nom, pwd);
+			
+			if (utilisateur.getNom() == nom){
+				JOptionPane.showMessageDialog(this, "test");
+			}
+			else {
+				JOptionPane.showMessageDialog(this, "erreur");
+			}
+		}
 	}
 }
