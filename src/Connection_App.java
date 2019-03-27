@@ -17,6 +17,10 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JPasswordField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -30,18 +34,19 @@ public class Connection_App extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
-	private controle controleur = new controle();
-	@SuppressWarnings("unused")
-	private User utilisateur;
+	private controle controleur;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		controle controleur = new controle();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Connection_App frame = new Connection_App();
+					Connection_App frame = new Connection_App(controleur);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +58,8 @@ public class Connection_App extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Connection_App() {
+	public Connection_App(controle controleur) {
+		this.controleur = controleur;
 		setTitle("Connexion a votre espace");
 		setResizable(false);
 		setAlwaysOnTop(true);
@@ -117,8 +123,8 @@ public class Connection_App extends JFrame {
 			
 		}
 		else {
-				User utilisateur = controleur.searchUser(nom, pwd);
-				JOptionPane.showMessageDialog(this, utilisateur);
+			JOptionPane.showMessageDialog(this, controleur.searchUser(nom, pwd));
+			User utilisateur = controleur.searchUser(nom, pwd);
 			
 			if (utilisateur.getNom() == nom){
 				JOptionPane.showMessageDialog(this, "test");
