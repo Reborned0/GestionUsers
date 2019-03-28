@@ -34,15 +34,17 @@ public class Recherche_Util_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Recherche_Util_App() {
+		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1000, 674);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setBackground(Color.decode("#77AADD"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
+		textField.setToolTipText("Recherche");
 		textField.setText("");
 		textField.setBounds(242, 97, 370, 20);
 		contentPane.add(textField);
@@ -53,7 +55,7 @@ public class Recherche_Util_App extends JFrame {
 		contentPane.add(btnRecherche);
 		
 		JList list = new JList();
-		list.setBounds(242, 151, 494, 362);
+		list.setBounds(242, 128, 494, 362);
 		contentPane.add(list);
 	}
 }
