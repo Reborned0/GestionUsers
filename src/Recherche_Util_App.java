@@ -139,7 +139,7 @@ public class Recherche_Util_App extends JFrame {
 			contentPane.add(button);
 		}
 		
-<<<<<<< HEAD
+
 		txtRecherche = new JTextField();
 		txtRecherche.setToolTipText("Recherche");
 		txtRecherche.setBounds(242, 97, 370, 20);
@@ -174,8 +174,7 @@ public class Recherche_Util_App extends JFrame {
 		button.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		button.setBounds(10, 11, 139, 43);
 		contentPane.add(button);
-=======
->>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
+
 	}
 	
 	private void Retour(User utilisateur) {
