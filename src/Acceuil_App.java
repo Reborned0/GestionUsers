@@ -19,11 +19,13 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Acceuil_App {
 
 	private JFrame frmAcceuil;
-
+	private int FenetreAjoutModif = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -61,8 +63,9 @@ public class Acceuil_App {
 		frmAcceuil.getContentPane().setLayout(null);
 		
 		JButton btnModifier = new JButton("Modifier");
-		btnModifier.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+
+		btnModifier.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent arg0) {
 				Modifier(utilisateur);
 			}
 		});
