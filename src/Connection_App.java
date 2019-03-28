@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.mysql.jdbc.Util;
+
 import controleur.controle;
 import metier.User;
 
@@ -131,7 +133,7 @@ public class Connection_App extends JFrame {
 				if (utilisateur.getLogin().equals(login.toLowerCase()) && utilisateur.getMdp().equals(pwd)){
 					if (utilisateur.getEtat().equals("administrateur")){
 						JOptionPane.showMessageDialog(this, "test");
-						accueil();
+						accueil(utilisateur);
 					}
 					else {
 						JOptionPane.showMessageDialog(this, "Vous n'avez pas l'autorisation d'accéder à ce contenu");
@@ -144,9 +146,9 @@ public class Connection_App extends JFrame {
 		}
 	}
 	
-	private void accueil(){
+	private void accueil(User utilisateur){
 		setVisible(false);
-		Acceuil_App acc = new Acceuil_App();
+		Acceuil_App acc = new Acceuil_App(utilisateur);
 		
 		
 	}

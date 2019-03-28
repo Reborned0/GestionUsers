@@ -7,6 +7,8 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import metier.User;
+
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -25,11 +27,11 @@ public class Acceuil_App {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args, User utilisateur) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Acceuil_App window = new Acceuil_App();
+					Acceuil_App window = new Acceuil_App(utilisateur);
 					window.frmAcceuil.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +43,7 @@ public class Acceuil_App {
 	/**
 	 * Create the application.
 	 */
-	public Acceuil_App() {
+	public Acceuil_App(User utilisateur) {
 		initialize();
 	}
 
@@ -83,7 +85,7 @@ public class Acceuil_App {
 		lblBonjour.setBounds(10, 11, 74, 30);
 		frmAcceuil.getContentPane().add(lblBonjour);
 		
-		JLabel lblNompersonne = new JLabel("PRENOM + NOM");
+		JLabel lblNompersonne = new JLabel();
 		lblNompersonne.setFont(new Font("Tahoma", Font.ITALIC, 17));
 		lblNompersonne.setBounds(94, 8, 172, 36);
 		frmAcceuil.getContentPane().add(lblNompersonne);
