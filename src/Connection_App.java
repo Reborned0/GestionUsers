@@ -23,6 +23,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Connection_App extends JFrame {
 
@@ -59,6 +60,7 @@ public class Connection_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Connection_App(controle controleur) {
+		setBackground(Color.decode("#77AADD"));
 		this.controleur = controleur;
 		setTitle("Connexion a votre espace");
 		setResizable(false);
@@ -88,7 +90,7 @@ public class Connection_App extends JFrame {
 			}
 		});
 
-		btnValider.setBounds(556, 87, 79, 33);
+		btnValider.setBounds(504, 165, 167, 41);
 		contentPane.add(btnValider);
 		
 		JLabel lblIdentifiant = new JLabel("Identifiant");
