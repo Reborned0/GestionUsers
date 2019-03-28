@@ -44,13 +44,13 @@ public class Acceuil_App {
 	 * Create the application.
 	 */
 	public Acceuil_App(User utilisateur) {
-		initialize();
+		initialize(utilisateur);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(User utilisateur) {
 		frmAcceuil = new JFrame();
 		frmAcceuil.getContentPane().setBackground(Color.decode("#77AADD"));
 		frmAcceuil.getContentPane().setForeground(new Color(173, 255, 47));
@@ -63,7 +63,7 @@ public class Acceuil_App {
 		JButton btnModifier = new JButton("Modifier");
 		btnModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Modifier();
+				Modifier(utilisateur);
 			}
 		});
 		btnModifier.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -85,15 +85,14 @@ public class Acceuil_App {
 		lblBonjour.setBounds(10, 11, 74, 30);
 		frmAcceuil.getContentPane().add(lblBonjour);
 		
-		JLabel lblNompersonne = new JLabel();
+		JLabel lblNompersonne = new JLabel(utilisateur.getPrenom() + " " + utilisateur.getNom());
 		lblNompersonne.setFont(new Font("Tahoma", Font.ITALIC, 17));
 		lblNompersonne.setBounds(94, 8, 172, 36);
 		frmAcceuil.getContentPane().add(lblNompersonne);
 	}
-	private void Modifier() {
-		Modification_App Modifier= new Modification_App();
-		if(!Modifier.isEnabled()) {
-			Modifier.main(null);
-		}
+	private void Modifier(User utilisateur) {
+		frmAcceuil.setVisible(false);
+		Recherche_Util_App rech= new Recherche_Util_App(utilisateur);
+
 	}
 }

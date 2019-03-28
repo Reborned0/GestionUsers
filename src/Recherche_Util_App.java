@@ -1,9 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import metier.User;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -17,11 +21,11 @@ public class Recherche_Util_App extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args, User utilisateur) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Recherche_Util_App frame = new Recherche_Util_App();
+					Recherche_Util_App frame = new Recherche_Util_App(utilisateur);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +37,7 @@ public class Recherche_Util_App extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Recherche_Util_App() {
+	public Recherche_Util_App(User utilisateur) {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1000, 674);
@@ -57,5 +61,8 @@ public class Recherche_Util_App extends JFrame {
 		JList list = new JList();
 		list.setBounds(242, 128, 494, 362);
 		contentPane.add(list);
+		Vector<String> vec = new Vector();
+		vec.add(new String("test"));
+		
 	}
 }

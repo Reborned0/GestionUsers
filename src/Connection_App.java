@@ -132,7 +132,6 @@ public class Connection_App extends JFrame {
 			try {
 				if (utilisateur.getLogin().equals(login.toLowerCase()) && utilisateur.getMdp().equals(pwd)){
 					if (utilisateur.getEtat().equals("administrateur")){
-						JOptionPane.showMessageDialog(this, "test");
 						accueil(utilisateur);
 					}
 					else {
