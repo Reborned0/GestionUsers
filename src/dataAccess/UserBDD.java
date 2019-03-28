@@ -19,12 +19,12 @@ public class UserBDD {
  * @param id identifant de l'utilsateur à rechercher dans la BdD
  * @return un objet Utilisateur ou null
  */
-	public User searchUser(String nom, String pwd) {
+	public User searchUser(String login, String pwd) {
 
 		User unUtilisateur = new User();
 		try {
-			PreparedStatement statement = connect.prepareStatement("select id, nom, prenom from visiteur where nom = ? and mdp = ?");
-			statement.setString(1, nom);
+			PreparedStatement statement = connect.prepareStatement("select id, nom, prenom from visiteur where login = ? and mdp = ?");
+			statement.setString(1, login);
 			statement.setString(2, pwd);
 			ResultSet result = statement.executeQuery();
 			if (result.first()) {
