@@ -1,11 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.List;
 import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controleur.controle;
 import metier.User;
 
 import sun.swing.AccumulativeRunnable;
@@ -22,6 +24,7 @@ public class Recherche_Util_App extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtRecherche;
+	private controle controleur;
 
 	/**
 	 * Launch the application.
@@ -65,11 +68,15 @@ public class Recherche_Util_App extends JFrame {
 		btnRecherche.setBounds(622, 96, 114, 23);
 		contentPane.add(btnRecherche);
 		
-		JList list = new JList();
+		List<User> allUsers = controleur.allUsers();
+		Vector<String[]> lignes = new Vector<String[]>();
+		for (User unUser : allUsers){
+			lignes.add(new String[] { unUser.getId(), unUser.getPrenom(), unUser.getNom()});
+		}
+		
+		JList list = new JList(lignes);
 		list.setBounds(242, 128, 494, 362);
 		contentPane.add(list);
-		Vector<String> vec = new Vector();
-		vec.add(new String("test"));
 		
 		
 		JButton btn_Modif_Consult = new JButton("");

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import metier.User;
 
@@ -35,6 +37,25 @@ public class UserBDD {
 			e.printStackTrace();
 		}
 		return unUtilisateur;
+	}
+	
+	public List<User> allUsers() {
+
+		User unUtilisateur = null;
+		List<User> lesUtilisateurs = new ArrayList<User>();
+		try {
+			PreparedStatement statement = connect.prepareStatement("select * from visiteur");
+			ResultSet result = statement.executeQuery();
+			while (result.next()) {
+				System.out.println(result.getString("id"));
+				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"), result.getString("login"), result.getString("mdp"), result.getString("etat"));
+				lesUtilisateurs.add(unUtilisateur);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lesUtilisateurs;
 	}
 	
 }

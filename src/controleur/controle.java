@@ -1,5 +1,7 @@
 package controleur;
 
+import java.util.List;
+
 import dataAccess.UserBDD;
 import metier.User;
 
@@ -18,5 +20,9 @@ public class controle {
 	
 	public User searchUser(String login, String pwd){
 		return bdd.searchUser(login, pwd);
+	}
+	
+	public List<User> allUsers(){
+		return bdd.allUsers();
 	}
 }
