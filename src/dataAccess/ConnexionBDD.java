@@ -9,17 +9,17 @@ public class ConnexionBDD {
 	/**
 	 * URL de connection
 	 */
-	private static String url = "jdbc:mysql://127.0.0.1/sio2_GsbAppliFrais";
+	private static String url = "jdbc:mysql://localhost/sio2_GsbAppliFrais";
 
 	/**
 	 * Nom du user
 	 */
-	private static String user = "root";
+	private static String user = "ts1";
 
 	/**
 	 * Mot de passe du user
 	 */
-	private static String passwd = "";
+	private static String passwd = "ts1";
 
 	/**
 	 * Objet Connection
