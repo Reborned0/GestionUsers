@@ -28,7 +28,7 @@ public class UserBDD {
 			statement.setString(2, pwd);
 			ResultSet result = statement.executeQuery();
 			if (result.first()) {
-				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"), result.getString("login"));
+				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"), result.getString("login"), result.getString("mdp"), result.getString("etat"));
 			}
 				
 		} catch (SQLException e) {

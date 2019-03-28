@@ -126,14 +126,28 @@ public class Connection_App extends JFrame {
 		}
 		else {
 			User utilisateur = controleur.searchUser(login, pwd);
-			JOptionPane.showMessageDialog(this, utilisateur.getLogin());
 			
-			if (utilisateur.getLogin().equals(login.toLowerCase())){
-				JOptionPane.showMessageDialog(this, "test");
+			try {
+				if (utilisateur.getLogin().equals(login.toLowerCase()) && utilisateur.getMdp().equals(pwd)){
+					if (utilisateur.getEtat().equals("administrateur")){
+						JOptionPane.showMessageDialog(this, "test");
+						accueil();
+					}
+					else {
+						JOptionPane.showMessageDialog(this, "Vous n'avez pas l'autorisation d'accéder à ce contenu");
+					}
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(this, "Login ou Mot de passe incorrect. Erreur :"+ " "+e.getMessage());
 			}
-			else {
-				JOptionPane.showMessageDialog(this, utilisateur.getLogin() + login.toLowerCase());
-			}
+
 		}
+	}
+	
+	private void accueil(){
+		setVisible(false);
+		Acceuil_App acc = new Acceuil_App();
+		
+		
 	}
 }

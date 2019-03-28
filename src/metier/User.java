@@ -9,18 +9,22 @@ public class User {
 	private String cp;
 	private String ville;
 	private String login;
+	private String etat;
+	private String mdp;
 	
 	/**
 	 * @param id
 	 * @param nom
 	 * @param prenom
 	 */
-	public User(String id, String nom, String prenom, String login) {
+	public User(String id, String nom, String prenom, String login, String mdp, String etat) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.login = login;
+		this.etat = etat;
+		this.mdp = mdp;
 	}
 	
 	/**
@@ -118,6 +122,22 @@ public class User {
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+
+	public String getMdp() {
+		return mdp;
+	}
+
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
 	}
 	
 }
