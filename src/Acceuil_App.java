@@ -79,6 +79,11 @@ public class Acceuil_App {
 		frmAcceuil.getContentPane().add(btnAjouter);
 		
 		JButton btnConsulter = new JButton("Consulter");
+		btnConsulter.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Consulter(utilisateur);
+			}
+		});
 		btnConsulter.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnConsulter.setBounds(281, 435, 257, 101);
 		frmAcceuil.getContentPane().add(btnConsulter);
@@ -94,8 +99,14 @@ public class Acceuil_App {
 		frmAcceuil.getContentPane().add(lblNompersonne);
 	}
 	private void Modifier(User utilisateur) {
+		FenetreAjoutModif=1;
 		frmAcceuil.setVisible(false);
-		Recherche_Util_App rech= new Recherche_Util_App(utilisateur);
-
+		Recherche_Util_App rech= new Recherche_Util_App(utilisateur,FenetreAjoutModif);
+	}
+	
+	private void Consulter(User utilisateur) {
+		FenetreAjoutModif=3;
+		frmAcceuil.setVisible(false);
+		Recherche_Util_App rech = new Recherche_Util_App(utilisateur, FenetreAjoutModif);
 	}
 }
