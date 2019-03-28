@@ -130,7 +130,7 @@ public class Connection_App extends JFrame {
 				JOptionPane.showMessageDialog(this, "test");
 			}
 			else {
-				JOptionPane.showMessageDialog(this, "erreur");
+				//JOptionPane.showMessageDialog(this, "erreur");
 			}
 		}
 	}
