@@ -50,6 +50,7 @@ public class Acceuil_App {
 	 */
 	private void initialize() {
 		frmAcceuil = new JFrame();
+		frmAcceuil.getContentPane().setBackground(Color.decode("#77AADD"));
 		frmAcceuil.getContentPane().setForeground(new Color(173, 255, 47));
 		frmAcceuil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmAcceuil.setVisible(true);
