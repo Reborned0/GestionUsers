@@ -8,18 +8,19 @@ public class User {
 	private String adresse;
 	private String cp;
 	private String ville;
-	
+	private String login;
 	
 	/**
 	 * @param id
 	 * @param nom
 	 * @param prenom
 	 */
-	public User(String id, String nom, String prenom) {
+	public User(String id, String nom, String prenom, String login) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.login = login;
 	}
 	
 	/**
@@ -109,6 +110,14 @@ public class User {
 	@Override
 	public String toString() {
 		return "Utilisateur : " + id + ", " + nom + ", " + prenom ;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 	
 }

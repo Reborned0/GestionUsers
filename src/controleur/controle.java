@@ -16,7 +16,7 @@ public class controle {
 		return bdd;
 	}
 	
-	public User searchUser(String nom, String pwd){
-		return bdd.searchUser(nom, pwd);
+	public User searchUser(String login, String pwd){
+		return bdd.searchUser(login, pwd);
 	}
 }

@@ -23,12 +23,12 @@ public class UserBDD {
 
 		User unUtilisateur = new User();
 		try {
-			PreparedStatement statement = connect.prepareStatement("select id, nom, prenom from visiteur where login = ? and mdp = ?");
+			PreparedStatement statement = connect.prepareStatement("select * from visiteur where login = ? and mdp = ?");
 			statement.setString(1, login);
 			statement.setString(2, pwd);
 			ResultSet result = statement.executeQuery();
 			if (result.first()) {
-				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"));
+				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"), result.getString("login"));
 			}
 				
 		} catch (SQLException e) {

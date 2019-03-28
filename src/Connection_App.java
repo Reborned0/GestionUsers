@@ -109,11 +109,11 @@ public class Connection_App extends JFrame {
 	}
 	
 	protected void valider(){
-		String nom = textField.getText();
+		String login = textField.getText();
 		@SuppressWarnings("deprecation")
 		String pwd = passwordField.getText();
 		
-		if(nom.isEmpty())
+		if(login.isEmpty())
 		{ //affiche message erreur
 			
 			JOptionPane.showMessageDialog(this, "Saisissez un nom", "Erreur", JOptionPane.INFORMATION_MESSAGE);
@@ -123,14 +123,14 @@ public class Connection_App extends JFrame {
 			
 		}
 		else {
-			JOptionPane.showMessageDialog(this, controleur.searchUser(nom, pwd));
-			User utilisateur = controleur.searchUser(nom, pwd);
+			User utilisateur = controleur.searchUser(login, pwd);
+			JOptionPane.showMessageDialog(this, utilisateur.getLogin());
 			
-			if (utilisateur.getNom() == nom){
+			if (utilisateur.getLogin().equals(login.toLowerCase())){
 				JOptionPane.showMessageDialog(this, "test");
 			}
 			else {
-				//JOptionPane.showMessageDialog(this, "erreur");
+				JOptionPane.showMessageDialog(this, utilisateur.getLogin() + login.toLowerCase());
 			}
 		}
 	}
