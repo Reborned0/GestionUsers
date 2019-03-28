@@ -81,6 +81,7 @@ public class Recherche_Util_App extends JFrame {
 	}
 	
 	private void Retour(User utilisateur) {
+		setVisible(false);
 		Acceuil_App Accueil = new Acceuil_App(utilisateur);
 	}
 }
