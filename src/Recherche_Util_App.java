@@ -65,6 +65,7 @@ public class Recherche_Util_App extends JFrame {
 			contentPane = new JPanel();
 			contentPane.setBackground(Color.decode("#77AADD"));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			contentPane.setLayout(new BorderLayout(0,0));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
 			
@@ -78,7 +79,7 @@ public class Recherche_Util_App extends JFrame {
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
 			
-			contentPane.add(getPanel(), BorderLayout.NORTH);
+			//contentPane.add(getPanel(), BorderLayout.NORTH);
 			getContentPane().add(jscrollpane, BorderLayout.CENTER);
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
@@ -142,7 +143,8 @@ public class Recherche_Util_App extends JFrame {
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
-			search();
+			panel.add(txtRecherche);
+			panel.setVisible(true);
 		}
 		return panel;
 	}

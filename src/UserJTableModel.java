@@ -17,7 +17,7 @@ public class UserJTableModel extends AbstractTableModel{
 	public UserJTableModel () {
 		nomColonnes = new String[] {
 				"Id",
-				"PrÃ©nom",
+				"Prénom",
 				"Nom"
 		};
 		Vec = new Vector<String []>() ;
