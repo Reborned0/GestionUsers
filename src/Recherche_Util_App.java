@@ -48,6 +48,10 @@ public class Recherche_Util_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
+		
+		Vector<String[]> vec = new Vector<String[]>();
+		vec.add(new String[] { utilisateur.getId()});
+		
 		if(Fenetre == 1) {
 			setTitle("Recherche pour une modification");
 
@@ -69,13 +73,12 @@ public class Recherche_Util_App extends JFrame {
 			JButton btnRecherche = new JButton("Recherche");
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
-			
-			JList list = new JList();
+	
+				
+			JList list = new JList(vec);
 			list.setBounds(242, 128, 494, 362);
 			contentPane.add(list);
-			Vector<String> vec = new Vector();
-			vec.add(new String("test"));
-			
+
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
 			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
@@ -120,8 +123,6 @@ public class Recherche_Util_App extends JFrame {
 			JList list = new JList();
 			list.setBounds(242, 128, 494, 362);
 			contentPane.add(list);
-			Vector<String> vec = new Vector();
-			vec.add(new String("test"));
 			
 			
 			JButton btn_Modif_Consult = new JButton("Consulter");
@@ -150,13 +151,7 @@ public class Recherche_Util_App extends JFrame {
 		btnRecherche.setBounds(622, 96, 114, 23);
 		contentPane.add(btnRecherche);
 		
-		List<User> allUsers = controleur.allUsers();
-		Vector<String[]> lignes = new Vector<String[]>();
-		for (User unUser : allUsers){
-			lignes.add(new String[] { unUser.getId(), unUser.getPrenom(), unUser.getNom()});
-		}
-		
-		JList list = new JList(lignes);
+		JList list = new JList();
 		list.setBounds(242, 128, 494, 362);
 		contentPane.add(list);
 		

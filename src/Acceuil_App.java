@@ -92,7 +92,7 @@ public class Acceuil_App {
 		lblBonjour.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblBonjour.setBounds(10, 11, 74, 30);
 		frmAcceuil.getContentPane().add(lblBonjour);
-		
+	
 		JLabel lblNompersonne = new JLabel(utilisateur.getPrenom() + " " + utilisateur.getNom());
 		lblNompersonne.setFont(new Font("Tahoma", Font.ITALIC, 17));
 		lblNompersonne.setBounds(94, 8, 172, 36);
