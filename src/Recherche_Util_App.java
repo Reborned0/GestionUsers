@@ -49,8 +49,9 @@ public class Recherche_Util_App extends JFrame {
 	 */
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
 		
-		Vector<String[]> vec = new Vector<String[]>();
-		vec.add(new String[] { utilisateur.getId()});
+		//Vector<String[]> vec = new Vector<String[]>();
+		//vec.add(new String[] { utilisateur.getId()});
+		String[] vec = {"un", "deux"};
 		
 		if(Fenetre == 1) {
 			setTitle("Recherche pour une modification");
