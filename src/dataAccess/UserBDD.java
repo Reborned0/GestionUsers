@@ -44,14 +44,14 @@ public class UserBDD {
 		User unUtilisateur = null;
 		List<User> lesUtilisateurs = new ArrayList<User>();
 		try {
-			System.out.println("testDepart");
+
 			PreparedStatement statement = connect.prepareStatement("select * from visiteur");
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				System.out.println(result.getString("id"));
 				unUtilisateur = new User(result.getString("id"), result.getString("nom"), result.getString("prenom"), result.getString("login"), result.getString("mdp"), result.getString("etat"), result.getString("adresse"),result.getString("cp"), result.getString("ville"), result.getDate("dateEmbauche"));
 				lesUtilisateurs.add(unUtilisateur);
-				System.out.println("test");
+
 			}
 
 		} catch (SQLException e) {

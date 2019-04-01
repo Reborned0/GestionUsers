@@ -5,6 +5,8 @@ import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
 import controleur.controle;
@@ -25,9 +27,12 @@ import java.awt.event.ActionEvent;
 public class Recherche_Util_App extends JFrame {
 
 	private JPanel contentPane;
+	private JPanel panel;
 	private JTextField txtRecherche;
 	private controle controleur = new controle();
-	private Vector<String []> Vec;
+	private UserJTableModel userJTableModel= new UserJTableModel();
+	private JTable jtable = new JTable(userJTableModel);
+	private JScrollPane jscrollpane = new JScrollPane(jtable);
 
 	/**
 	 * Launch the application.
@@ -49,16 +54,8 @@ public class Recherche_Util_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
-		Vec = new Vector<String []>() ;
-		for(User UnUser : controleur.allUsers())
-		{
-			Vec.add(new String[] { UnUser.getId()});
-		}
-		
-		//Vector<String[]> vec = new Vector<String[]>();
-		//vec.add(new String[] { utilisateur.getId(), utilisateur.getAdresse()});
-		
-		
+
+
 		if(Fenetre == 1) {
 			setTitle("Recherche pour une modification");
 
@@ -80,12 +77,9 @@ public class Recherche_Util_App extends JFrame {
 			JButton btnRecherche = new JButton("Recherche");
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
-	
-				
-			JList list = new JList(Vec);
-			list.setBounds(242, 128, 494, 362);
-			contentPane.add(list);
-
+			
+			contentPane.add(getPanel(), BorderLayout.NORTH);
+			getContentPane().add(jscrollpane, BorderLayout.CENTER);
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
 			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
@@ -127,10 +121,6 @@ public class Recherche_Util_App extends JFrame {
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
 			
-			JList list = new JList();
-			list.setBounds(242, 128, 494, 362);
-			contentPane.add(list);
-			
 			
 			JButton btn_Modif_Consult = new JButton("Consulter");
 			btn_Modif_Consult.setBounds(571, 514, 165, 57);
@@ -147,36 +137,19 @@ public class Recherche_Util_App extends JFrame {
 			contentPane.add(button);
 		}
 		
-
-		txtRecherche = new JTextField();
-		txtRecherche.setToolTipText("Recherche");
-		txtRecherche.setBounds(242, 97, 370, 20);
-		contentPane.add(txtRecherche);
-		txtRecherche.setColumns(10);
-		
-		JButton btnRecherche = new JButton("Recherche");
-		btnRecherche.setBounds(622, 96, 114, 23);
-		contentPane.add(btnRecherche);
-		
-		JList list = new JList();
-		list.setBounds(242, 128, 494, 362);
-		contentPane.add(list);
-		
-		
-		JButton btn_Modif_Consult = new JButton("");
-		btn_Modif_Consult.setBounds(571, 514, 165, 57);
-		contentPane.add(btn_Modif_Consult);
-		
-		JButton button = new JButton("<<  Retour");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Retour(utilisateur);
-			}
-		});
-		button.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		button.setBounds(10, 11, 139, 43);
-		contentPane.add(button);
-
+	}
+	
+	private JPanel getPanel() {
+		if (panel == null) {
+			panel = new JPanel();
+			search();
+		}
+		return panel;
+	}
+	
+	protected void search(){
+		List<User> lesUsers = controleur.allUsers();
+		userJTableModel.loadData(lesUsers);
 	}
 	
 	private void Retour(User utilisateur) {
