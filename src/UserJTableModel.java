@@ -17,7 +17,7 @@ public class UserJTableModel extends AbstractTableModel{
 	public UserJTableModel () {
 		nomColonnes = new String[] {
 				"Id",
-				"PrÃ©nom",
+				"Prénom",
 				"Nom"
 		};
 		Vec = new Vector<String []>() ;
@@ -42,6 +42,12 @@ public class UserJTableModel extends AbstractTableModel{
 	public int getRowCount() {
 		// TODO Stub de la méthode généré automatiquement
 		return Vec.size();
+	}
+	
+	@Override
+	public String getColumnName(int column) {
+		
+		return nomColonnes[column];
 	}
 	
 	public void loadData(List<User> lesUsers) {
