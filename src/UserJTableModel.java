@@ -44,6 +44,12 @@ public class UserJTableModel extends AbstractTableModel{
 		return Vec.size();
 	}
 	
+	@Override
+	public String getColumnName(int column) {
+		
+		return nomColonnes[column];
+	}
+	
 	public void loadData(List<User> lesUsers) {
 		Vec = new Vector<String[]>(); // vider le contenu
 		for (User unUtilisateur : lesUsers) {
