@@ -26,7 +26,8 @@ public class Recherche_Util_App extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtRecherche;
-	private controle controleur;
+	private controle controleur = new controle();
+	private Vector<String []> Vec;
 
 	/**
 	 * Launch the application.
@@ -48,10 +49,15 @@ public class Recherche_Util_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
+		Vec = new Vector<String []>() ;
+		for(User UnUser : controleur.allUsers())
+		{
+			Vec.add(new String[] { UnUser.getId()});
+		}
 		
 		//Vector<String[]> vec = new Vector<String[]>();
-		//vec.add(new String[] { utilisateur.getId()});
-		String[] vec = {"un", "deux"};
+		//vec.add(new String[] { utilisateur.getId(), utilisateur.getAdresse()});
+		
 		
 		if(Fenetre == 1) {
 			setTitle("Recherche pour une modification");
@@ -76,7 +82,7 @@ public class Recherche_Util_App extends JFrame {
 			contentPane.add(btnRecherche);
 	
 				
-			JList list = new JList(vec);
+			JList list = new JList(Vec);
 			list.setBounds(242, 128, 494, 362);
 			contentPane.add(list);
 
