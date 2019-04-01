@@ -1,5 +1,7 @@
 package metier;
 
+import java.sql.Date;
+
 public class User {
 
 	private String id;
@@ -11,13 +13,14 @@ public class User {
 	private String login;
 	private String etat;
 	private String mdp;
+	private Date dateEmbauche;
 	
 	/**
 	 * @param id
 	 * @param nom
 	 * @param prenom
 	 */
-	public User(String id, String nom, String prenom, String login, String mdp, String etat) {
+	public User(String id, String nom, String prenom, String login, String mdp, String etat, String adresse, String cp, String ville, Date Dateemb) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -25,6 +28,10 @@ public class User {
 		this.login = login;
 		this.etat = etat;
 		this.mdp = mdp;
+		this.adresse = adresse;
+		this.cp=cp;
+		this.ville=ville;
+		this.dateEmbauche=Dateemb;
 	}
 	
 	/**
@@ -138,6 +145,14 @@ public class User {
 
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+
+	public Date getDateEmbauche() {
+		return dateEmbauche;
+	}
+
+	public void setDateEmbauche(Date datEmbauche) {
+		this.dateEmbauche = datEmbauche;
 	}
 	
 }
