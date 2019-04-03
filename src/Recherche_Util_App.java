@@ -28,7 +28,7 @@ public class Recherche_Util_App extends JFrame {
 	 */
 	private static final long serialVersionUID = 737222297281937962L;
 	private JPanel contentPane;
-	private JPanel panel;
+	private JTable Tableau;
 	private JTextField txtRecherche;
 	private controle controleur = new controle();
 	private UserJTableModel userJTableModel= new UserJTableModel();
@@ -80,7 +80,8 @@ public class Recherche_Util_App extends JFrame {
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
 			
-			//contentPane.add(getPanel(), BorderLayout.NORTH);
+			Tableau = new JTable();
+			contentPane.add(Tableau, BorderLayout.CENTER);
 			getContentPane().add(jscrollpane, BorderLayout.CENTER);
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
@@ -139,15 +140,6 @@ public class Recherche_Util_App extends JFrame {
 			contentPane.add(button);
 		}
 		
-	}
-	
-	private JPanel getPanel() {
-		if (panel == null) {
-			panel = new JPanel();
-			panel.add(txtRecherche);
-			panel.setVisible(true);
-		}
-		return panel;
 	}
 	
 	protected void search(){

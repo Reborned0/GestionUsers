@@ -101,7 +101,8 @@ public class Acceuil_App {
 	private void Modifier(User utilisateur) {
 		FenetreAjoutModif=1;
 		frmAcceuil.setVisible(false);
-		Recherche_Util_App rech= new Recherche_Util_App(utilisateur,FenetreAjoutModif);
+		//Recherche_Util_App rech= new Recherche_Util_App(utilisateur,FenetreAjoutModif);
+		Test test = new Test(utilisateur);
 	}
 	
 	private void Consulter(User utilisateur) {
