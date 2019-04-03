@@ -4,12 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.mysql.jdbc.Util;
-
 import controleur.controle;
 import metier.User;
 
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.JButton;
 
 
@@ -19,10 +18,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -47,6 +42,7 @@ public class Connection_App extends JFrame {
 		controle controleur = new controle();
 		
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Connection_App frame = new Connection_App(controleur);
@@ -67,7 +63,7 @@ public class Connection_App extends JFrame {
 		setTitle("Connexion a votre espace");
 		setResizable(false);
 		setAlwaysOnTop(true);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 790, 292);
 		contentPane = new JPanel();
 		contentPane.setOpaque(false);
@@ -87,6 +83,7 @@ public class Connection_App extends JFrame {
 		
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				valider();
 			}

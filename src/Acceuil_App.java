@@ -2,23 +2,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.GridLayout;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 import metier.User;
 
-import java.awt.GridBagLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.Box;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Color;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -31,6 +21,7 @@ public class Acceuil_App {
 	 */
 	public static void main(String[] args, User utilisateur) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Acceuil_App window = new Acceuil_App(utilisateur);
@@ -56,7 +47,7 @@ public class Acceuil_App {
 		frmAcceuil = new JFrame();
 		frmAcceuil.getContentPane().setBackground(Color.decode("#77AADD"));
 		frmAcceuil.getContentPane().setForeground(new Color(173, 255, 47));
-		frmAcceuil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frmAcceuil.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frmAcceuil.setVisible(true);
 		frmAcceuil.setTitle("Acceuil");
 		frmAcceuil.setBounds(100, 100, 830, 778);
@@ -65,6 +56,7 @@ public class Acceuil_App {
 		JButton btnModifier = new JButton("Modifier");
 
 		btnModifier.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				Modifier(utilisateur);
 			}
@@ -80,6 +72,7 @@ public class Acceuil_App {
 		
 		JButton btnConsulter = new JButton("Consulter");
 		btnConsulter.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				Consulter(utilisateur);
 			}

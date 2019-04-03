@@ -40,6 +40,7 @@ public class Recherche_Util_App extends JFrame {
 	 */
 	public static void main(String[] args, User utilisateur, int Fenetre) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Recherche_Util_App frame = new Recherche_Util_App(utilisateur,Fenetre);
@@ -86,6 +87,7 @@ public class Recherche_Util_App extends JFrame {
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
 			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
+				@Override
 				public void mouseClicked(MouseEvent e) {
 					
 				}
@@ -95,6 +97,7 @@ public class Recherche_Util_App extends JFrame {
 			
 			JButton button = new JButton("<<  Retour");
 			button.addMouseListener(new MouseAdapter() {
+				@Override
 				public void mouseClicked(MouseEvent e) {
 					Retour(utilisateur);
 				}
@@ -131,6 +134,7 @@ public class Recherche_Util_App extends JFrame {
 			
 			JButton button = new JButton("<<  Retour");
 			button.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					Retour(utilisateur);
 				}

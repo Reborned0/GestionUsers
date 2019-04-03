@@ -31,6 +31,7 @@ public class Ajouter_App extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Ajouter_App frame = new Ajouter_App();

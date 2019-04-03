@@ -1,26 +1,18 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import sun.swing.AccumulativeRunnable;
-
 import java.awt.Cursor;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JLabel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.JTextField;
-import javax.swing.JFormattedTextField;
 import datechooser.beans.DateChooserCombo;
 import javax.swing.JButton;
 
@@ -45,6 +37,7 @@ public class Modification_App extends JFrame {
 	 */
 	public void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Modification_App frame = new Modification_App();
@@ -70,7 +63,7 @@ public class Modification_App extends JFrame {
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setVisible(true);
 		setTitle("Modification de l'utilisateur");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1000, 570);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.decode("#77AADD"));
