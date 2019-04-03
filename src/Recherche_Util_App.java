@@ -1,7 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.List;
-import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,12 +11,10 @@ import javax.swing.border.EmptyBorder;
 import controleur.controle;
 import metier.User;
 
-import sun.swing.AccumulativeRunnable;
 
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JList;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -26,6 +23,10 @@ import java.awt.event.ActionEvent;
 
 public class Recherche_Util_App extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 737222297281937962L;
 	private JPanel contentPane;
 	private JPanel panel;
 	private JTextField txtRecherche;
