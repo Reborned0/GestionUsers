@@ -16,18 +16,21 @@ import metier.User;
 
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class Test extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1984372635733818497L;
 	private JPanel contentPane;
-	private JTable table;
-	
-	private JTable Tableau;
 	private JTextField txtRecherche;
 	private controle controleur = new controle();
 	private UserJTableModel userJTableModel= new UserJTableModel();
 	private JTable jtable = new JTable(userJTableModel);
 	private JScrollPane jscrollpane = new JScrollPane(jtable);
+	private JTable table;
 
 
 	/**
@@ -71,9 +74,6 @@ public class Test extends JFrame {
 		JButton btnRecherche = new JButton("Recherche");
 		btnRecherche.setBounds(622, 44, 114, 23);
 		contentPane.add(btnRecherche);
-		
-		Tableau = new JTable();
-		contentPane.add(Tableau, BorderLayout.CENTER);
 		getContentPane().add(jscrollpane, BorderLayout.CENTER);
 		
 		JButton btn_Modif_Consult = new JButton("Modifier");
@@ -95,12 +95,19 @@ public class Test extends JFrame {
 		button.setBounds(10, 11, 139, 43);
 		contentPane.add(button);
 		
-		
-	
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(163, 152, 611, 428);
+		contentPane.add(scrollPane);
 		
 		table = new JTable();
-		table.setBounds(153, 109, 692, 527);
-		contentPane.add(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "New column", "New column"
+			}
+		));
+		scrollPane.setViewportView(table);
 	}
 	private void Retour(User utilisateur) {
 		setVisible(false);
@@ -111,5 +118,4 @@ public class Test extends JFrame {
 		List<User> lesUsers = controleur.allUsers();
 		userJTableModel.loadData(lesUsers);
 	}
-	
 }
