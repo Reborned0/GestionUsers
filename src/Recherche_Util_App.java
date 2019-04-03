@@ -10,16 +10,18 @@ import javax.swing.border.EmptyBorder;
 
 import controleur.controle;
 import metier.User;
-
+import modele.UserJTableModel;
 
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.event.ActionListener;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
+import java.awt.Rectangle;
+import javax.swing.table.DefaultTableModel;
+
 
 public class Recherche_Util_App extends JFrame {
 
@@ -28,12 +30,26 @@ public class Recherche_Util_App extends JFrame {
 	 */
 	private static final long serialVersionUID = 737222297281937962L;
 	private JPanel contentPane;
-	private JTable Tableau;
+	private JTable table;
 	private JTextField txtRecherche;
 	private controle controleur = new controle();
+	
 	private UserJTableModel userJTableModel= new UserJTableModel();
-	private JTable jtable = new JTable(userJTableModel);
-	private JScrollPane jscrollpane = new JScrollPane(jtable);
+	private JTable jtable = new JTable(new DefaultTableModel(
+		new Object[][] {
+		},
+		new String[] {
+			"ID", "Pr\u00E9nom", "Nom"
+		}
+	) {
+		Class[] columnTypes = new Class[] {
+			String.class, String.class, String.class
+		};
+		public Class getColumnClass(int columnIndex) {
+			return columnTypes[columnIndex];
+		}
+	});
+	private JScrollPane jscrollpane = new JScrollPane();
 
 	/**
 	 * Launch the application.
@@ -58,7 +74,7 @@ public class Recherche_Util_App extends JFrame {
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
 
 
-		if(Fenetre == 1) {
+		//if(Fenetre == 1) {
 			setTitle("Recherche pour une modification");
 
 			setVisible(true);
@@ -67,8 +83,8 @@ public class Recherche_Util_App extends JFrame {
 			contentPane = new JPanel();
 			contentPane.setBackground(Color.decode("#77AADD"));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			contentPane.setLayout(new BorderLayout(0,0));
 			setContentPane(contentPane);
+			contentPane.setLayout(null);
 			contentPane.setLayout(null);
 			
 			txtRecherche = new JTextField();
@@ -81,9 +97,6 @@ public class Recherche_Util_App extends JFrame {
 			btnRecherche.setBounds(622, 96, 114, 23);
 			contentPane.add(btnRecherche);
 			
-			Tableau = new JTable();
-			contentPane.add(Tableau, BorderLayout.CENTER);
-			getContentPane().add(jscrollpane, BorderLayout.CENTER);
 			
 			JButton btn_Modif_Consult = new JButton("Modifier");
 			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
@@ -105,7 +118,11 @@ public class Recherche_Util_App extends JFrame {
 			button.setFont(new Font("Tahoma", Font.PLAIN, 16));
 			button.setBounds(10, 11, 139, 43);
 			contentPane.add(button);
-		}else if (Fenetre == 3) {
+			jscrollpane.setBounds(126, 153, 674, 277);
+			contentPane.add(jscrollpane);
+			jscrollpane.setViewportView(jtable);
+			jtable.setBorder(new EmptyBorder(0, 0, 0, 0));
+	/*	}else if (Fenetre == 3) {
 			setTitle("Recherche pour une consultation");
 
 			setVisible(true);
@@ -142,7 +159,7 @@ public class Recherche_Util_App extends JFrame {
 			button.setFont(new Font("Tahoma", Font.PLAIN, 16));
 			button.setBounds(10, 11, 139, 43);
 			contentPane.add(button);
-		}
+		}*/
 		
 	}
 	

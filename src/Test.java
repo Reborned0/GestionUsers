@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import controleur.controle;
 import metier.User;
+import modele.UserJTableModel;
 
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -107,7 +108,7 @@ public class Test extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "New column", "New column"
+				"ID", "Prénom", "Nom"
 			}
 		));
 		scrollPane.setViewportView(table);

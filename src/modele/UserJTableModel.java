@@ -1,3 +1,4 @@
+package modele;
 import java.util.List;
 import java.util.Vector;
 
@@ -7,10 +8,11 @@ import metier.User;
 
 public class UserJTableModel extends AbstractTableModel{
 
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8772110109294138474L;
+	private static final long serialVersionUID = 1L;
 	private String[] nomColonnes;
 	private Vector<String []> Vec;
 
