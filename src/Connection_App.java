@@ -76,7 +76,12 @@ public class Connection_App extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
+		textField = new JTextField(10);
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				valider();
+			}
+		});
 		textField.setBounds(0, 0, 202, 20);
 		panel.add(textField);
 				textField.setColumns(10);
@@ -104,7 +109,12 @@ public class Connection_App extends JFrame {
 		lblMotDePasse.setBounds(65, 130, 113, 27);
 		contentPane.add(lblMotDePasse);
 		
-		passwordField = new JPasswordField();
+		passwordField = new JPasswordField(10);
+		passwordField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valider();
+			}
+		});
 		passwordField.setBounds(208, 135, 202, 20);
 		contentPane.add(passwordField);
 	}
@@ -145,7 +155,6 @@ public class Connection_App extends JFrame {
 	private void accueil(User utilisateur){
 		setVisible(false);
 		Acceuil_App acc = new Acceuil_App(utilisateur);
-		
 		
 	}
 }
