@@ -59,19 +59,19 @@ public class Recherche_Util_App extends JFrame {
 	 * Create the frame.
 	 */
 	public Recherche_Util_App(User utilisateur, int Fenetre) {
-		jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jtable.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(e.getClickCount() == 2 && !e.isConsumed()) {
-					Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-					Modifier(Identifiant);
-				}
-			}
-		});
-		search();
-
 		if(Fenetre == 1) {
+			jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+			jtable.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if(e.getClickCount() == 2 && !e.isConsumed()) {
+						Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
+						Modifier_Consulter(Identifiant,Fenetre,utilisateur);
+					}
+				}
+			});
+			search();
+			
 		setTitle("Recherche pour une modification");
 
 		setVisible(true);
@@ -105,7 +105,7 @@ public class Recherche_Util_App extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-				Modifier(Identifiant);
+				Modifier_Consulter(Identifiant,Fenetre,utilisateur);
 			}
 		});
 		btn_Modif_Consult.setBounds(571, 514, 165, 57);
@@ -130,6 +130,18 @@ public class Recherche_Util_App extends JFrame {
 
 			}
 		else if (Fenetre == 3) {
+			jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+			jtable.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if(e.getClickCount() == 2 && !e.isConsumed()) {
+						Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
+						Modifier_Consulter(Identifiant,Fenetre,utilisateur);
+					}
+				}
+			});
+			search();
+			
 			setTitle("Recherche pour une consultation");
 
 		jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -138,7 +150,7 @@ public class Recherche_Util_App extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				if(e.getClickCount() == 2 && !e.isConsumed()) {
 					Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-					Modifier(Identifiant);
+					Modifier_Consulter(Identifiant,Fenetre,utilisateur);
 				}
 			}
 		});
@@ -176,7 +188,7 @@ public class Recherche_Util_App extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-				Modifier(Identifiant);
+				Modifier_Consulter(Identifiant,Fenetre,utilisateur);
 			}
 		});
 		btn_Modif_Consult.setBounds(571, 514, 165, 57);
@@ -238,8 +250,8 @@ public class Recherche_Util_App extends JFrame {
 		Acceuil_App Accueil = new Acceuil_App(utilisateur);
 
 	}
-	private void Modifier(String identifiant) {
+	private void Modifier_Consulter(String identifiant, int Fenetre, User Utilisateur) {
 		setVisible(false);
-		Modification_App Modification = new Modification_App(identifiant);
+		Modification_App Modification = new Modification_App(identifiant,Fenetre, Utilisateur);
 	}
 }
