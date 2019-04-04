@@ -12,7 +12,7 @@ public class UserJTableModel extends AbstractTableModel{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -9139888049711241787L;
 	private String[] nomColonnes;
 	private Vector<String []> Vec;
 

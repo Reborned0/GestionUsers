@@ -25,4 +25,15 @@ public class controle {
 	public List<User> allUsers(){
 		return bdd.allUsers();
 	}
+	
+	public List<User> findByNom(String filtreNom) {
+
+		return bdd.findByNom("%" + filtreNom + "%");
+	}
+	public User UnUtilisateur(String Identifiant) {
+		return bdd.UnUtilisateur(Identifiant);
+	}
+	public void editUser(User Utilisateur) {
+		bdd.EditUser(Utilisateur);
+	}
 }
