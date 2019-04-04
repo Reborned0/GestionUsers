@@ -38,9 +38,9 @@ public class Connection_App extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+
 		controle controleur = new controle();
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
@@ -70,12 +70,12 @@ public class Connection_App extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBounds(208, 66, 202, 20);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+
 		textField = new JTextField(10);
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -84,8 +84,8 @@ public class Connection_App extends JFrame {
 		});
 		textField.setBounds(0, 0, 202, 20);
 		panel.add(textField);
-				textField.setColumns(10);
-		
+		textField.setColumns(10);
+
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			@Override
@@ -96,19 +96,19 @@ public class Connection_App extends JFrame {
 
 		btnValider.setBounds(504, 165, 167, 41);
 		contentPane.add(btnValider);
-		
+
 		JLabel lblIdentifiant = new JLabel("Identifiant");
 		lblIdentifiant.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblIdentifiant.setToolTipText("");
 		lblIdentifiant.setBounds(65, 63, 113, 27);
 		contentPane.add(lblIdentifiant);
-		
+
 		JLabel lblMotDePasse = new JLabel("Mot de passe");
 		lblMotDePasse.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblMotDePasse.setToolTipText("");
 		lblMotDePasse.setBounds(65, 130, 113, 27);
 		contentPane.add(lblMotDePasse);
-		
+
 		passwordField = new JPasswordField(10);
 		passwordField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,24 +118,24 @@ public class Connection_App extends JFrame {
 		passwordField.setBounds(208, 135, 202, 20);
 		contentPane.add(passwordField);
 	}
-	
+
 	protected void valider(){
 		String login = textField.getText();
 		@SuppressWarnings("deprecation")
 		String pwd = passwordField.getText();
-		
+
 		if(login.isEmpty())
 		{ //affiche message erreur
-			
+
 			JOptionPane.showMessageDialog(this, "Saisissez un nom", "Erreur", JOptionPane.INFORMATION_MESSAGE);
 		}
 		else if (pwd.isEmpty()){
 			JOptionPane.showMessageDialog(this, "Saisissez un mot de passe !", "Erreur", JOptionPane.INFORMATION_MESSAGE);
-			
+
 		}
 		else {
 			User utilisateur = controleur.searchUser(login, pwd);
-			
+
 			try {
 				if (utilisateur.getLogin().equals(login.toLowerCase()) && utilisateur.getMdp().equals(pwd)){
 					if (utilisateur.getEtat().equals("administrateur")){
@@ -151,10 +151,10 @@ public class Connection_App extends JFrame {
 
 		}
 	}
-	
+
 	private void accueil(User utilisateur){
 		setVisible(false);
 		Acceuil_App acc = new Acceuil_App(utilisateur);
-		
+
 	}
 }

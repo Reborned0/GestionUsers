@@ -14,7 +14,7 @@ public class User {
 	private String etat;
 	private String mdp;
 	private Date dateEmbauche;
-	
+
 	/**
 	 * @param id
 	 * @param nom
@@ -33,7 +33,7 @@ public class User {
 		this.ville=ville;
 		this.dateEmbauche=Dateemb;
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -77,7 +77,7 @@ public class User {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
+
 	/**
 	 * @return the adresse
 	 */
@@ -114,7 +114,7 @@ public class User {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
@@ -154,5 +154,5 @@ public class User {
 	public void setDateEmbauche(Date datEmbauche) {
 		this.dateEmbauche = datEmbauche;
 	}
-	
+
 }

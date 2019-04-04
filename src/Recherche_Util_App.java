@@ -71,65 +71,77 @@ public class Recherche_Util_App extends JFrame {
 				}
 			});
 			search();
-			
-		setTitle("Recherche pour une modification");
 
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 674);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.decode("#77AADD"));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+			setTitle("Recherche pour une modification");
 
-		txtRecherche = new JTextField();
-		txtRecherche.setToolTipText("Recherche");
-		txtRecherche.setBounds(242, 97, 370, 20);
-		contentPane.add(txtRecherche);
-		txtRecherche.setColumns(10);
+			setVisible(true);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setBounds(100, 100, 1000, 674);
+			contentPane = new JPanel();
+			contentPane.setBackground(Color.decode("#77AADD"));
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
 
-		JButton btnRecherche = new JButton("Recherche");
-		btnRecherche.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				recherche();
-			}
-		});
-		btnRecherche.setBounds(622, 96, 114, 23);
-		contentPane.add(btnRecherche);
+			txtRecherche = new JTextField();
+			txtRecherche.setToolTipText("Recherche");
+			txtRecherche.setBounds(242, 97, 370, 20);
+			contentPane.add(txtRecherche);
+			txtRecherche.setColumns(10);
 
-
-		JButton btn_Modif_Consult = new JButton("Modifier");
-		btn_Modif_Consult.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-				Modifier_Consulter(Identifiant,Fenetre,utilisateur);
-			}
-		});
-		btn_Modif_Consult.setBounds(571, 514, 165, 57);
-		contentPane.add(btn_Modif_Consult);
-
-		JButton button = new JButton("<<  Retour");
-		button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Retour(utilisateur);
-			}
-		});
-		button.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		button.setBounds(10, 11, 139, 43);
-		contentPane.add(button);
+			JButton btnRecherche = new JButton("Recherche");
+			btnRecherche.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					recherche();
+				}
+			});
+			btnRecherche.setBounds(622, 96, 114, 23);
+			contentPane.add(btnRecherche);
 
 
+			JButton btn_Modif_Consult = new JButton("Modifier");
+			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
+					Modifier_Consulter(Identifiant,Fenetre,utilisateur);
+				}
+			});
+			btn_Modif_Consult.setBounds(571, 514, 165, 57);
+			contentPane.add(btn_Modif_Consult);
+
+			JButton button = new JButton("<<  Retour");
+			button.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Retour(utilisateur);
+				}
+			});
+			button.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			button.setBounds(10, 11, 139, 43);
+			contentPane.add(button);
 
 
-		jscrollpane.setBounds(126, 153, 674, 277);
-		contentPane.add(jscrollpane,BorderLayout.CENTER);
 
-			}
+
+			jscrollpane.setBounds(126, 153, 674, 277);
+			contentPane.add(jscrollpane,BorderLayout.CENTER);
+
+		}
 		else if (Fenetre == 3) {
+			jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+			jtable.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
+					Modifier_Consulter(Identifiant,Fenetre,utilisateur);
+				}
+			});
+			search();
+
+			setTitle("Recherche pour une consultation");
+
 			jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 			jtable.addMouseListener(new MouseAdapter() {
 				@Override
@@ -141,75 +153,61 @@ public class Recherche_Util_App extends JFrame {
 				}
 			});
 			search();
-			
-			setTitle("Recherche pour une consultation");
 
-		jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jtable.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(e.getClickCount() == 2 && !e.isConsumed()) {
+
+			setVisible(true);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setBounds(100, 100, 1000, 674);
+			contentPane = new JPanel();
+			contentPane.setBackground(Color.decode("#77AADD"));
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
+
+			txtRecherche = new JTextField();
+			txtRecherche.setToolTipText("Recherche");
+			txtRecherche.setBounds(242, 97, 370, 20);
+			contentPane.add(txtRecherche);
+			txtRecherche.setColumns(10);
+
+			JButton btnRecherche = new JButton("Recherche");
+			btnRecherche.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					recherche();
+				}
+			});
+			btnRecherche.setBounds(622, 96, 114, 23);
+			contentPane.add(btnRecherche);
+
+
+			JButton btn_Modif_Consult = new JButton("Consulter");
+			btn_Modif_Consult.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
 					Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
 					Modifier_Consulter(Identifiant,Fenetre,utilisateur);
 				}
-			}
-		});
-		search();
+			});
+			btn_Modif_Consult.setBounds(571, 514, 165, 57);
+			contentPane.add(btn_Modif_Consult);
 
-
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 674);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.decode("#77AADD"));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-
-		txtRecherche = new JTextField();
-		txtRecherche.setToolTipText("Recherche");
-		txtRecherche.setBounds(242, 97, 370, 20);
-		contentPane.add(txtRecherche);
-		txtRecherche.setColumns(10);
-
-		JButton btnRecherche = new JButton("Recherche");
-		btnRecherche.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				recherche();
-			}
-		});
-		btnRecherche.setBounds(622, 96, 114, 23);
-		contentPane.add(btnRecherche);
-
-
-		JButton btn_Modif_Consult = new JButton("Consulter");
-		btn_Modif_Consult.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Identifiant = jtable.getValueAt(jtable.getSelectedRow(), 0).toString();
-				Modifier_Consulter(Identifiant,Fenetre,utilisateur);
-			}
-		});
-		btn_Modif_Consult.setBounds(571, 514, 165, 57);
-		contentPane.add(btn_Modif_Consult);
-
-		JButton button = new JButton("<<  Retour");
-		button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Retour(utilisateur);
-			}
-		});
-		button.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		button.setBounds(10, 11, 139, 43);
-		contentPane.add(button);
+			JButton button = new JButton("<<  Retour");
+			button.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Retour(utilisateur);
+				}
+			});
+			button.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			button.setBounds(10, 11, 139, 43);
+			contentPane.add(button);
 
 
 
 
-		jscrollpane.setBounds(126, 153, 674, 277);
-		contentPane.add(jscrollpane,BorderLayout.CENTER);
+			jscrollpane.setBounds(126, 153, 674, 277);
+			contentPane.add(jscrollpane,BorderLayout.CENTER);
 
 		}
 
@@ -219,7 +217,7 @@ public class Recherche_Util_App extends JFrame {
 		List<User> lesUsers = controleur.allUsers();
 		userJTableModel.loadData(lesUsers);
 	}
-	
+
 	protected void recherche() {
 		String nom = txtRecherche.getText();
 		if (nom == null)
