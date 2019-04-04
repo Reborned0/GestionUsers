@@ -378,21 +378,25 @@ public class Modification_App extends JFrame {
 			contentPane.add(lblDate);
 			
 			textField = new JTextField();
+			textField.setEditable(false);
 			textField.setBounds(205, 226, 236, 20);
 			contentPane.add(textField);
 			textField.setColumns(10);
 			
 			textField_1 = new JTextField();
+			textField_1.setEditable(false);
 			textField_1.setColumns(10);
 			textField_1.setBounds(205, 189, 236, 20);
 			contentPane.add(textField_1);
 			
 			textField_2 = new JTextField();
+			textField_2.setEditable(false);
 			textField_2.setColumns(10);
 			textField_2.setBounds(205, 152, 236, 20);
 			contentPane.add(textField_2);
 			
 			textField_3 = new JTextField();
+			textField_3.setEditable(false);
 			textField_3.setColumns(10);
 			textField_3.setColumns(10);
 			textField_3.setBounds(205, 115, 236, 20);
@@ -405,21 +409,25 @@ public class Modification_App extends JFrame {
 			contentPane.add(textField_4);
 			
 			textField_5 = new JTextField();
+			textField_5.setEditable(false);
 			textField_5.setColumns(10);
 			textField_5.setBounds(688, 87, 236, 20);
 			contentPane.add(textField_5);
 			
 			textField_6 = new JTextField();
+			textField_6.setEditable(false);
 			textField_6.setColumns(10);
 			textField_6.setBounds(688, 123, 236, 20);
 			contentPane.add(textField_6);
 			
 			textField_7 = new JTextField();
+			textField_7.setEditable(false);
 			textField_7.setColumns(10);
 			textField_7.setBounds(688, 160, 236, 20);
 			contentPane.add(textField_7);
 			
 			dateChooser = new JDateChooser();
+			dateChooser.setFocusable(false);
 			dateChooser.setDateFormatString("dd MM yyyy");
 			dateChooser.setBounds(688, 198, 236, 20);
 			contentPane.add(dateChooser);
