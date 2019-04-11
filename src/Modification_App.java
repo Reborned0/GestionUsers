@@ -12,7 +12,9 @@ import java.awt.event.WindowEvent;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -46,6 +48,7 @@ public class Modification_App extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private ArrayList<JTextField>TableaudesText = new ArrayList<JTextField>();
 	private JDateChooser dateChooser;
 
 	private User UtilAppli;
@@ -549,13 +552,15 @@ public class Modification_App extends JFrame {
 			textField_7 = new JTextField();
 			textField_7.setColumns(10);
 			textField_7.setBounds(688, 160, 236, 20);
-			contentPane.add(textField_7);
-
+			contentPane.add(textField_7);			
+			
+			
 			JButton btnNewButton = new JButton("Ajouter");
 			btnNewButton.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					Date date1 = new java.sql.Date(dateChooser.getDate().getTime());
+					//User u1= new User(id, nom, prenom, login, mdp, etat, adresse, cp, ville, Dateemb);
 					Utilisateur = new User(textField_4.getText(), textField_3.getText(), textField_2.getText(), textField_1.getText(), textField.getText(), null, textField_5.getText(), textField_6.getText(), textField_7.getText(), date1);
 					ajoutBDD(Utilisateur);
 				}
@@ -627,7 +632,8 @@ public class Modification_App extends JFrame {
 		controleur.editUser(Utilisateur);
 	}
 	private void ajoutBDD(User utilisateur) {
-		controleur.addUser(utilisateur);
+		JOptionPane.showConfirmDialog(this, "Voulez-vous vraiment ajouter l'utilisateur" + "\n"+ utilisateur.getPrenom() + utilisateur.getNom());
+		//controleur.addUser(utilisateur);
 	}
 	private void Retour(User utilisateur) {
 		this.setVisible(false);
