@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
 	<name>GestUsers</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-	</buildSpec>
-	<natures>
-=======
-	<name>Gestion Utilisateur</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,6 +13,5 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
->>>>>>> branch 'master' of https://github.com/Reborned0/GestionUsers
 	</natures>
 </projectDescription>
