@@ -16,6 +16,10 @@ import java.awt.event.MouseEvent;
 
 public class Ajouter_App extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5279836144001506363L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;

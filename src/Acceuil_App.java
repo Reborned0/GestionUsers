@@ -112,17 +112,20 @@ public class Acceuil_App {
 		FenetreAjoutModif=1;
 		frmAcceuil.setVisible(false);
 		//Recherche_Util_App rech= new Recherche_Util_App(utilisateur,FenetreAjoutModif);
+		@SuppressWarnings("unused")
 		Recherche_Util_App test = new Recherche_Util_App(utilisateur,FenetreAjoutModif);
 	}
 
 	private void Consulter(User utilisateur) {
 		FenetreAjoutModif=3;
 		frmAcceuil.setVisible(false);
+		@SuppressWarnings("unused")
 		Recherche_Util_App rech = new Recherche_Util_App(utilisateur, FenetreAjoutModif);
 	}
 	private void Ajouter(User utilisateur) {
 		FenetreAjoutModif = 2;
 		frmAcceuil.setVisible(false);
+		@SuppressWarnings("unused")
 		Modification_App Ajout = new Modification_App(null, FenetreAjoutModif, utilisateur);
 	}
 }

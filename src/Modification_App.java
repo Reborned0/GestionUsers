@@ -7,14 +7,9 @@ import javax.swing.border.EmptyBorder;
 import controleur.controle;
 
 import java.awt.Cursor;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,7 +18,6 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.JTextField;
-import datechooser.beans.DateChooserCombo;
 import metier.User;
 
 import javax.swing.JButton;
@@ -48,9 +42,11 @@ public class Modification_App extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	@SuppressWarnings("unused")
 	private ArrayList<JTextField>TableaudesText = new ArrayList<JTextField>();
 	private JDateChooser dateChooser;
 
+	@SuppressWarnings("unused")
 	private User UtilAppli;
 	private User Utilisateur;
 	private controle controleur = new controle();
@@ -615,6 +611,7 @@ public class Modification_App extends JFrame {
 			dateChooser.setDate(Util.getDateEmbauche());
 		}else
 		{
+			@SuppressWarnings("unused")
 			Calendar c= Calendar.getInstance();
 
 			textField.setText("");
@@ -638,6 +635,7 @@ public class Modification_App extends JFrame {
 	private void Retour(User utilisateur) {
 		this.setVisible(false);
 		setVisible(false);
+		@SuppressWarnings("unused")
 		Acceuil_App Accueil = new Acceuil_App(utilisateur);
 
 	}

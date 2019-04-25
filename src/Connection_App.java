@@ -154,6 +154,7 @@ public class Connection_App extends JFrame {
 
 	private void accueil(User utilisateur){
 		setVisible(false);
+		@SuppressWarnings("unused")
 		Acceuil_App acc = new Acceuil_App(utilisateur);
 
 	}

@@ -245,11 +245,13 @@ public class Recherche_Util_App extends JFrame {
 
 	private void Retour(User utilisateur) {
 		setVisible(false);
+		@SuppressWarnings("unused")
 		Acceuil_App Accueil = new Acceuil_App(utilisateur);
 
 	}
 	private void Modifier_Consulter(String identifiant, int Fenetre, User Utilisateur) {
 		setVisible(false);
+		@SuppressWarnings("unused")
 		Modification_App Modification = new Modification_App(identifiant,Fenetre, Utilisateur);
 	}
 }
