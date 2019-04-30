@@ -447,7 +447,7 @@ public class Modification_App extends JFrame {
 
 			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 			setVisible(true);
-			setTitle("Modification de l'utilisateur");
+			setTitle("Ajout de l'utilisateur");
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			setBounds(100, 100, 1000, 570);
 			contentPane = new JPanel();
