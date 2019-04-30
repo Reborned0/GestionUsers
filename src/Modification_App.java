@@ -630,7 +630,7 @@ public class Modification_App extends JFrame {
 	}
 	private void ajoutBDD(User utilisateur) {
 		JOptionPane.showConfirmDialog(this, "Voulez-vous vraiment ajouter l'utilisateur" + "\n"+ utilisateur.getPrenom() + utilisateur.getNom());
-		//controleur.addUser(utilisateur);
+		controleur.addUser(utilisateur);
 	}
 	private void Retour(User utilisateur) {
 		this.setVisible(false);
